@@ -52,7 +52,7 @@ if(isset($_POST['order'])) {
             }
         }
 
-        echo "<h2>✅ Order Placed Successfully!</h2>";
+        echo "<h2> Order Placed Successfully!</h2>";
         echo "<p><a href='order.php'>View Your Orders</a></p>";
     }
 
