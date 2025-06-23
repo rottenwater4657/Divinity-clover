@@ -22,7 +22,7 @@ if(isset($_POST['login'])){
            $_SESSION['user_id'] = $row['id'];
             header("refresh:1.5;url=../apage/studentpage.php");
             exit();
-        } else {``
+        } else {
             echo "Wrong Username Or Password";
         }
     }
@@ -30,12 +30,7 @@ if(isset($_POST['login'])){
     } else {
         echo "Query preparation failed.";
     }
-
-
-
 }
-
-
 ?>
 <!DOCTYPE html> <html lang="en"> 
     <head> <meta charset="UTF-8"> 
