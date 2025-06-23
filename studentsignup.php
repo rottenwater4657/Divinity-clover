@@ -10,7 +10,7 @@ include("./sql.php");
     try{
     mysqli_query($conn,$sql);
     echo "user is now registered";
-     header("refresh:3;url=studentlogin.php"); // Redirect after 3 second
+     header("url=studentlogin.php"); 
 exit();
     }
     catch(mysqli_sql_exception)

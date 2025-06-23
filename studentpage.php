@@ -53,18 +53,16 @@ if(isset($_POST['order'])) {
         }
 
         echo "<h2> Order Placed Successfully!</h2>";
-        echo "<p><a href='order.php'>View Your Orders</a></p>";
+        
     }
 
 } 
 
 
 ?>
-<a href="logout.php">
-  <button>Logout</button>
-</a>
+
     
-    <a href =menu2.php>menu</a><br>
+    <a href =menuS.php>menu</a><br>
 <h2>🍽️ Place Your Order</h2>
 
 <form  method="POST">

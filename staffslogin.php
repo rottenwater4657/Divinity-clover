@@ -20,7 +20,7 @@ if(isset($_POST['login'])){
         if (password_verify($password, $row['hash_password'])) {
            echo "loading...";
            $_SESSION['user_id'] = $row['id'];
-            header("refresh:1.5;url=..adminpage.php");
+            header("refresh:1.5;url=adminpage.php");
             exit();
         } else {
             echo "Wrong Username Or Password";

@@ -26,10 +26,10 @@ if (isset($_POST['mark_ready'])) {
     <title>Document</title>
 </head>
 <body>
-   <a href="../login and sign up/first.html">
+   <a href="first.html">
     <button > Back</button>
     </a>
-    <a href =menu.php>menu</a><br>
+    <a href =menuA.php>menu</a><br>
     <h2>All Orders</h2>
 <table border="1">
     <tr>
