@@ -25,29 +25,34 @@ exit();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🖋 SIGN IN</title>
-     <link rel="stylesheet" href="signin.css">
-          <link rel="icon" href="images/logo.png" type="image/png">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="signin.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    
 </head>
 <body>
-     <div class="video-container">
+    <!-- Background video -->
+    <div class="video-container">
         <video loop autoplay muted id="background-video">
             <source src="videos/login.mp4" type="video/mp4">
         </video>
     </div>
-   
+
+    <!-- Login form -->
     <div class="form-container">
         <div class="head">
-    <h1> 🖋 SIGN IN </h1>
-     <a href="first.html">
-             <button class="back-button">↩</button> </a>
-    <form action="" method="post">
-    <input type="text" name="username" placeholder=" Enter Your Username" required><br>
-    <input type="password" name="password" placeholder=" Enter Your Password" required><br> 
-    <button type="submit">  Sign In 🖋 </button>
+            <a href="first.html">
+                <button class="back-button">↩</button>
+            </a>
+            <h1>Sign Up</h1>
+        </div>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit" name="login">Register</button>
+        </form>
+       
     </div>
-    </div>
-</form>
 </body>
 </html>
  

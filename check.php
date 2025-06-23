@@ -16,7 +16,8 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $admin_code = $_POST['admin_code'];
     if ($admin_code === "1234") {
-        echo "<p>Access granted.</p>";
+        header("refresh:1.5;url=staffsignup.php");
+            exit();
     } else {
         echo "<p>Access denied.</p>";
     }
