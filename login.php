@@ -1,0 +1,29 @@
+
+<!DOCTYPE html> <html lang="en"> 
+    <head> <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Student login</title>
+         <link rel="stylesheet" href="login.css">
+          <link rel="icon" href="logo clover 1.png" type="image/png">
+         </head> 
+         <body>
+
+  <div class="form-container">
+    <div class="head"> <a href="first.html">
+             <button class="back-button">↩</button> 
+
+            </a> 
+            <h1>Login</h1>
+            </div>
+            <form method="POST">
+                 Username: <input type="text" name="username" required><br>
+                 Password: <input type="password" name="password" required><br> 
+                <button type="submit" name="login">Login</button>
+
+ </form> 
+  <div class=signup>
+  Do not have an account yet?<a href="studentsignup.php">sign up</a>
+  </div>
+  </div>
+</body> 
+ </html>
