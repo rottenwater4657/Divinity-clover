@@ -4,7 +4,6 @@ $mysqli = new mysqli("localhost", "root", "", "login");
 if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
 }
-
 // Add food
 if (isset($_POST['add'])) {
     $name = $_POST['name'];
@@ -13,7 +12,6 @@ if (isset($_POST['add'])) {
     $stmt->bind_param("si", $name, $price);
     $stmt->execute();
 }
-
 // Update price
 if (isset($_POST['update'])) {
     $id = $_POST['id'];
@@ -22,7 +20,6 @@ if (isset($_POST['update'])) {
     $stmt->bind_param("ii", $price, $id);
     $stmt->execute();
 }
-
 // Delete item
 if (isset($_POST['delete'])) {
     $id = $_POST['id'];
@@ -30,7 +27,6 @@ if (isset($_POST['delete'])) {
     $stmt->bind_param("i", $id);
     $stmt->execute();
 }
-
 // Fetch menu
 $result = $mysqli->query("SELECT * FROM menu");
 ?>
@@ -46,14 +42,12 @@ $result = $mysqli->query("SELECT * FROM menu");
     <button > Back</button>
     </a>
     <h1>🍽️ Admin Panel - Canteen Menu</h1>
-
 <h3>Add New Item</h3>
 <form method="POST">
     <input type="text" name="name" placeholder="Item Name" required>
     <input type="number" name="price" step="1" placeholder="Price" required>
     <button class="btn" type="submit" name="add">Add Item</button>
 </form>
-
 <h3>Current Menu</h3>
 <table>
     <tr><th>ID</th><th>Name</th><th>Price</th><th>Update</th><th>Delete</th></tr>
