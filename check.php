@@ -20,22 +20,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
+    <div class="video-container">
+        <video loop autoplay muted id="background-video">
+            <source src="videos/check.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="form-container">
+         <div class="head">
+            <a href="first.html">
+                <button class="back-button">↩</button>
+            </a>
 <h1>Enter Admin Code</h1>
+</div>
+        
 <form action="" method="post">
     <input type="text" name="admin_code" placeholder="Admin Code" required>
     <button type="submit">Check</button>
 </form>
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $admin_code = $_POST['admin_code'];
-    if ($admin_code === "1234") {
-        header("refresh:1.5;url=staffsignup.php");
-            exit();
-    } else {
-        echo "<p>Access denied.</p>";
-    }
-}
-?>
+</div>
+
 </body>
 </html>
        
