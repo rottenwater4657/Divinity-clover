@@ -80,7 +80,7 @@ $result = $mysqli->query("SELECT * FROM menu");
     </div>
     
 
-<h2>Current Menu</h2>
+<h1>Current Menu</h1>
 <table>
     <tr><th>ID</th><th>Name</th><th>Price</th><th>Update</th><th>Delete</th></tr>
     <?php while ($row = $result->fetch_assoc()) { ?>
