@@ -1,24 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Food Ordering Menu</title>
- <link rel="icon" href="images/logo.png" type="image/png">
-  <link rel="stylesheet" href="menu.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+     <link rel="icon" href="images/Log clover.jpg" type="image/png">
+     <link rel="stylesheet" href="mainstyle.css">
 </head>
+
 <body>
-  <nav class="navbar">
-     <ul class="nav-menu">
+  
+        <nav class="navbar">
+          
+            <a href="#" class="nav-logo">
+<img src="images/Logo DC.png" alt="Profile" style="height: 60px; border-radius: 50%; margin-left: auto;">
+            </a>
+            <ul class="nav-menu">
               <li class="class-item">
-                <a href="#" class="nav-link">Log Out</a>
+                <a href="#" class="nav-link">Home</a>
               </li>
               <li class="class-item">
                 <a href="#" class="nav-link">Menu</a>
               </li>
-              
-              </ul>
-  </nav>
+              <li class="class-item">
+                <a href="#" class="nav-link">Order History</a>
+              </li>
+              <li class="class-item">
+                <a href="#" class="nav-link">Contact Us</a>
+              </li>
+              <li class="class-item">
+                <a href="#" class="nav-link">Feedback</a>
+              </li>
+              <li class="class-item">
+                <a href="#" class="nav-link"> Log Out</a>
+              </li>
+        
+            </ul>
+        </nav>
     
-    <div name="place order">
+        <section class="food-gallery">
+  <div class="food-item"><img src="images/momo.jpg" alt="Momo"></div>
+  <div class="food-item"><img src="images/samosa.jpg" alt="Samosa"></div>
+  <div class="food-item"><img src="images/chowmein.jpg" alt="Chowmein"></div>
+  <div class="food-item"><img src="images/pakauda.jpg" alt="Pakauda"></div>
+  <div class="food-item"><img src="images/samosachaat.jpg" alt="SamosaChaat"></div>
+  <div class="food-item"><img src="images/colddrinks.jpg" alt="ColdDrinks"></div>
+</section>
+
+
+<div name="place order">
      <!-- <?php
 session_start();
 
@@ -107,5 +137,6 @@ $stmt->execute();
 $result = $stmt->get_result();
 ?>  -->
 </div>    
+
 </body>
 </html>
