@@ -2,22 +2,32 @@
 <html>
 <head>
   <title>Food Ordering Menu</title>
-
+ <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="menu.css">
 </head>
 <body>
+    <div class="video-container">
+        <video loop autoplay muted id="background-video">
+            <source src="videos/check.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+  <div class="top-nav">
+   
+    <a href="first.html" class="logout-btn">Logout</a>
+    <a href="Sorderhistory.php">History</a>
+   
+    <a href="menu2.php" class="menu-btn">Menu</a>
+  </div>
+    
     <div name="place order">
-    <?php
+     <?php
 session_start();
 
-// Prevent browser cache after logout
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Pragma: no-cache");
-header("Expires: 0");
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: ../login and sign up/first.html");
-    exit();
-}
+
+
+
 $mysqli = new mysqli("localhost", "root", "", "login"); 
 
 if ($mysqli->connect_error) {
@@ -52,17 +62,10 @@ if(isset($_POST['order'])) {
             }
         }
 
-        echo "<h2> Order Placed Successfully!</h2>";
-        
+        echo "<h2> Order Placed Successfully!</h2>";        
     }
-
 } 
-
-
-?>
-
-    
-    <a href =menuS.php>menu</a><br>
+?> 
 <h2>🍽️ Place Your Order</h2>
 
 <form  method="POST">
@@ -73,10 +76,10 @@ if(isset($_POST['order'])) {
             <th>Quantity</th>
         </tr>
 
-        <?php while ($row = $result->fetch_assoc()) { ?>
+        <?php while ($row = $result->fetch_assoc()) { ?> 
             <tr>
                 <td><?= htmlspecialchars($row['name']) ?></td>
-                <td><?= $row['price'] ?></td>
+                <td><?= $row['price'] ?></td> 
                 <td>
                     <input type="number" name="qty[<?= $row['id'] ?>]" min="0" value="0">
                     <input type="hidden" name="price[<?= $row['id'] ?>]" value="<?= $row['price'] ?>">
@@ -92,10 +95,7 @@ if(isset($_POST['order'])) {
     </div>
 
     <div name = "order history">
-        <?php
-
-
-
+      <?php
 $user_id = $_SESSION['user_id'];
 
 $sql = "SELECT o.order_id, m.name AS item_name, m.price, o.quantity, o.order_time, o.status
@@ -108,32 +108,7 @@ $stmt = $mysqli->prepare($sql);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
-?>
-<h2>📋 Your Order History</h2>
-
-<table>
-    <tr>
-        <th>Item</th>
-        <th>Quantity</th>
-        <th>Unit Price</th>
-        <th>Total</th>
-        <th>Date</th>
-        <th>Status</th>
-    </tr>
-
-    <?php while ($row = $result->fetch_assoc()) {
-        $total = $row['price'] * $row['quantity'];
-    ?>
-        <tr>
-            <td><?= htmlspecialchars($row['item_name']) ?></td>
-            <td><?= $row['quantity'] ?></td>
-            <td>Rs. <?= $row['price'] ?></td>
-            <td>Rs. <?= $total ?></td>
-            <td><?= $row['order_time'] ?></td>
-            <td><?=$row['status']?></td>
-        </tr>
-    <?php } ?>
-</table>
-    </div>
+?> 
+</div>   
 </body>
 </html>

@@ -1,14 +1,15 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] === "POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $admin_code = $_POST['admin_code'];
-    if ($admin_code === "1234") { 
-        header("Location: staffsignup.php");
-        exit();
+    if ($admin_code === "1234") {
+        header("refresh:0.1;url=staffsignup.php");
+            exit();
     } else {
         echo "<p>Access denied.</p>";
     }
 }
-?> 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,19 +20,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
-    <div class="video-container">
-        <video loop autoplay muted id="background-video">
-            <source src="videos/check.mp4" type="video/mp4">
-        </video>
-    </div>
-    <div class="form-container">
 <h1>Enter Admin Code</h1>
-<form  method="post">
+<form action="" method="post">
     <input type="text" name="admin_code" placeholder="Admin Code" required>
     <button type="submit">Check</button>
 </form>
-</div>
-  
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $admin_code = $_POST['admin_code'];
+    if ($admin_code === "1234") {
+        header("refresh:1.5;url=staffsignup.php");
+            exit();
+    } else {
+        echo "<p>Access denied.</p>";
+    }
+}
+?>
 </body>
 </html>
        
