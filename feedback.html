@@ -1,22 +1,11 @@
-<?php
-$mysqli = new mysqli("localhost", "root", "", "login");
-
-if ($mysqli->connect_error) {
-    die("Connection failed: " . $mysqli->connect_error);
-}
-// Fetch menu
-$result = $mysqli->query("SELECT * FROM menu");
-?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="menuS.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="feedback.css">
+    <title>Feedback</title>
 </head>
-
 <body>
     <nav class="navbar">
 
@@ -25,13 +14,13 @@ $result = $mysqli->query("SELECT * FROM menu");
         </a>
         <ul class="nav-menu">
             <li class="class-item">
-                <a href="studentpage.php" class="nav-link">Home</a>
+                <a href="adminpage.php" class="nav-link">Home</a>
             </li>
             <li class="class-item">
-                <a href="menuS.php" class="nav-link">Menu</a>
+                <a href="menuA.php" class="nav-link">Menu</a>
             </li>
             <li class="class-item">
-                <a href="Sorderhistory.php" class="nav-link">Order History</a>
+                <a href="Aorderhistory.php" class="nav-link">Order History</a>
             </li>
             <li class="class-item">
                 <a href="#" class="nav-link">Contact Us</a>
@@ -45,22 +34,14 @@ $result = $mysqli->query("SELECT * FROM menu");
 
         </ul>
     </nav>
-    <h1>Current Menu</h1>
-
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Price</th>
-        </tr>
-        <?php while ($row = $result->fetch_assoc()) { ?>
-            <tr>
-                <td><?= $row['id'] ?></td>
-                <td><?= htmlspecialchars($row['name']) ?></td>
-                <td>$<?= $row['price'] ?></td>
-            </tr>
-        <?php } ?>
-    </table>
+    <div class="form-container">
+    <form action="" method="post">
+        <h1>Feedback</h1>
+      <td>  <input type="text" name="name" placeholder="Your Name" required></td>
+      <td>   <input type="email" name="email" placeholder="Your Email" required></td>
+      <td>   <textarea name="message" placeholder="Your Feedback"  rows="5" cols="48"required></textarea></td>
+       <td>   <button type="submit">Submit</button></td>
+    </form>
+</div>
 </body>
-
 </html>

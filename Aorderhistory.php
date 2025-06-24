@@ -46,7 +46,7 @@ $result = $mysqli->query($sql);
                 <a href="#" class="nav-link">Contact Us</a>
             </li>
             <li class="class-item">
-                <a href="#" class="nav-link">Feedback</a>
+                <a href="feedback.html" class="nav-link">Feedback</a>
             </li>
             <li class="class-item">
                 <a href="first.html" class="nav-link"> Log Out</a>
