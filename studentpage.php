@@ -6,12 +6,17 @@
   <link rel="stylesheet" href="menu.css">
 </head>
 <body>
-      <!-- Top Navigation Bar -->
-  <div class="top-nav">
-    <!-- Logout button at top left -->
-    <a href="logout.php" class="logout-btn">Logout</a>
+    <div class="video-container">
+        <video loop autoplay muted id="background-video">
+            <source src="videos/check.mp4" type="video/mp4">
+        </video>
+    </div>
     
-    <!-- Menu button at top right -->
+  <div class="top-nav">
+   
+    <a href="first.html" class="logout-btn">Logout</a>
+    <a href="Sorderhistory.php">History</a>
+   
     <a href="menu2.php" class="menu-btn">Menu</a>
   </div>
     
@@ -19,15 +24,10 @@
      <?php
 session_start();
 
-// Prevent browser cache after logout
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Pragma: no-cache");
-header("Expires: 0");
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: first.html");
-    exit();
-}
+
+
+
 $mysqli = new mysqli("localhost", "root", "", "login"); 
 
 if ($mysqli->connect_error) {
@@ -62,13 +62,9 @@ if(isset($_POST['order'])) {
             }
         }
 
-        echo "<h2> Order Placed Successfully!</h2>";
-        
+        echo "<h2> Order Placed Successfully!</h2>";        
     }
-
 } 
-
-
 ?> 
 <h2>🍽️ Place Your Order</h2>
 
@@ -100,9 +96,6 @@ if(isset($_POST['order'])) {
 
     <div name = "order history">
       <?php
-
-
-
 $user_id = $_SESSION['user_id'];
 
 $sql = "SELECT o.order_id, m.name AS item_name, m.price, o.quantity, o.order_time, o.status
@@ -116,32 +109,6 @@ $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 ?> 
-<h2>📋 Your Order History</h2>
-
-<table>
-    <tr>
-        <th>Item</th>
-        <th>Quantity</th>
-        <th>Unit Price</th>
-        <th>Total</th>
-        <th>Date</th>
-        <th>Status</th>
-    </tr>
-
-    <?php while ($row = $result->fetch_assoc()) {
-        $total = $row['price'] * $row['quantity'];
-    ?> 
-        <tr>
-            <td><?= htmlspecialchars($row['item_name']) ?></td>
-            <td><?= $row['quantity'] ?></td>
-            <td>Rs. <?= $row['price'] ?></td>
-            <td>Rs. <?= $total ?></td>
-            <td><?= $row['order_time'] ?></td>
-            <td><?=$row['status']?></td>
-        </tr>
-     <?php } ?> 
-</table>
-    </div>
-    
+</div>   
 </body>
 </html>

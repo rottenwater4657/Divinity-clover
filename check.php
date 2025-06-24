@@ -26,13 +26,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </video>
     </div>
     <div class="form-container">
-        <div class="head">
-        <a href="staffslogin.php">
-             <button class="back-button">↩</button> 
-
-            </a> 
+         <div class="head">
+            <a href="first.html">
+                <button class="back-button">↩</button>
+            </a>
 <h1>Enter Admin Code</h1>
-        </div>
+</div>
+        
 <form action="" method="post">
     <input type="text" name="admin_code" placeholder="Admin Code" required>
     <button type="submit">Check</button>
