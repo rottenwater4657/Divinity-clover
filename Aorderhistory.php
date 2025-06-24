@@ -43,7 +43,7 @@ $result = $mysqli->query($sql);
                 <a href="Aorderhistory.php" class="nav-link">Order History</a>
             </li>
             <li class="class-item">
-                <a href="#" class="nav-link">Contact Us</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
             </li>
             <li class="class-item">
                 <a href="feedback.html" class="nav-link">Feedback</a>
