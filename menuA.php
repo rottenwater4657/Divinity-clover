@@ -36,19 +36,51 @@ $result = $mysqli->query("SELECT * FROM menu");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="last.css">
 </head>
 <body>
-  <a href="adminpage.php">
-    <button > Back</button>
-    </a>
-    <h1>🍽️ Admin Panel - Canteen Menu</h1>
-<h3>Add New Item</h3>
-<form method="POST">
+     <nav class="navbar">
+          
+            <a href="#" class="nav-logo">
+<img src="images/Logo DC.png" alt="Profile" style="height: 60px; border-radius: 50%; margin-left: auto;">
+            </a>
+            <ul class="nav-menu">
+              <li class="class-item">
+                <a href="adminpage.php" class="nav-link">Home</a>
+              </li>
+              <li class="class-item">
+                <a href="menuA.php" class="nav-link">Menu</a>
+              </li>
+              <li class="class-item">
+                <a href="Aorderhistory.php" class="nav-link">Order History</a>
+              </li>
+              <li class="class-item">
+                <a href="#" class="nav-link">Contact Us</a>
+              </li>
+              <li class="class-item">
+                <a href="#" class="nav-link">Feedback</a>
+              </li>
+              <li class="class-item">
+                <a href="first.html" class="nav-link"> Log Out</a>
+              </li>
+        
+            </ul>
+        </nav>
+  
+    <h1> Admin Panel - Canteen Menu</h1>
+<div class="form-container">
+        <div class="head">
+    <h2 > Add New Item </h2>
+   <form method="POST">
     <input type="text" name="name" placeholder="Item Name" required>
     <input type="number" name="price" step="1" placeholder="Price" required>
     <button class="btn" type="submit" name="add">Add Item</button>
 </form>
-<h3>Current Menu</h3>
+    </div>
+    </div>
+    
+
+<h2>Current Menu</h2>
 <table>
     <tr><th>ID</th><th>Name</th><th>Price</th><th>Update</th><th>Delete</th></tr>
     <?php while ($row = $result->fetch_assoc()) { ?>

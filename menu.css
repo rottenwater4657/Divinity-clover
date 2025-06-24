@@ -39,7 +39,11 @@ background-color: transparent;
 }
 
 body {
-    background-color: #C1E899;
+     background-image: url(images/admin_menu_.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -51,6 +55,16 @@ body {
 }
 
 h2 {
+    text-transform: uppercase;
+    color: #200202;
+    margin-top: 15%;
+}
+h1 {
+    text-transform: uppercase;
+    color: #200202;
+    margin-top: 15%;
+}
+h3 {
     text-transform: uppercase;
     color: #200202;
     margin-top: 15%;

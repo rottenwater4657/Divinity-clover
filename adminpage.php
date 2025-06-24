@@ -32,18 +32,33 @@ if (isset($_POST['mark_ready'])) {
 </head>
 <body>
     
-    <nav>
-   <a href="first.html">
-    <button > Back</button>
-    </a>
-    <a href =menuA.php>Menu</a><br>
-    <a href =Aorderhistory.php>history</a><br>
-    </nav>
-    <div class="video-container">
-        <video loop autoplay muted id="background-video">
-            <source src="videos/check.mp4" type="video/mp4">
-        </video>
-    </div>
+    <nav class="navbar">
+          
+            <a href="#" class="nav-logo">
+<img src="images/Logo DC.png" alt="Profile" style="height: 60px; border-radius: 50%; margin-left: auto;">
+            </a>
+            <ul class="nav-menu">
+              <li class="class-item">
+                <a href="adminpage.php" class="nav-link">Home</a>
+              </li>
+              <li class="class-item">
+                <a href="menuA.php" class="nav-link">Menu</a>
+              </li>
+              <li class="class-item">
+                <a href="Aorderhistory.php" class="nav-link">Order History</a>
+              </li>
+              <li class="class-item">
+                <a href="#" class="nav-link">Contact Us</a>
+              </li>
+              <li class="class-item">
+                <a href="#" class="nav-link">Feedback</a>
+              </li>
+              <li class="class-item">
+                <a href="first.html" class="nav-link"> Log Out</a>
+              </li>
+        
+            </ul>
+        </nav>
     <h2>All Orders</h2>
 <table border="1">
     <tr>

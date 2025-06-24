@@ -9,26 +9,58 @@ $result = $mysqli->query("SELECT * FROM menu");
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menuS.css">
     <title>Document</title>
 </head>
+
 <body>
-  <a href="studentpage.php">
-    <button > Back</button>
-    </a>
-    <h1>Canteen Menu</h1>
-<h3>Current Menu</h3>
-<table>
-    <tr><th>ID</th><th>Name</th><th>Price</th></tr>
-    <?php while ($row = $result->fetch_assoc()) { ?>
-    <tr>
-        <td><?= $row['id'] ?></td>
-        <td><?= htmlspecialchars($row['name']) ?></td>
-        <td>$<?= $row['price'] ?></td>
-    </tr>
-    <?php } ?>
-</table>
+    <nav class="navbar">
+
+        <a href="#" class="nav-logo">
+            <img src="images/Logo DC.png" alt="Profile" style="height: 60px; border-radius: 50%; margin-left: auto;">
+        </a>
+        <ul class="nav-menu">
+            <li class="class-item">
+                <a href="studentpage.php" class="nav-link">Home</a>
+            </li>
+            <li class="class-item">
+                <a href="menuS.php" class="nav-link">Menu</a>
+            </li>
+            <li class="class-item">
+                <a href="Sorderhistory.php" class="nav-link">Order History</a>
+            </li>
+            <li class="class-item">
+                <a href="#" class="nav-link">Contact Us</a>
+            </li>
+            <li class="class-item">
+                <a href="#" class="nav-link">Feedback</a>
+            </li>
+            <li class="class-item">
+                <a href="first.html" class="nav-link"> Log Out</a>
+            </li>
+
+        </ul>
+    </nav>
+    <h1>Current Menu</h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        <?php while ($row = $result->fetch_assoc()) { ?>
+            <tr>
+                <td><?= $row['id'] ?></td>
+                <td><?= htmlspecialchars($row['name']) ?></td>
+                <td>$<?= $row['price'] ?></td>
+            </tr>
+        <?php } ?>
+    </table>
 </body>
+
 </html>

@@ -13,9 +13,9 @@ ul {
     list-style: none;
 }
 
-h2{
-  margin-top: 100px;
-color: rgb(131, 110, 43);
+h1{
+
+color: rgb(14, 14, 14);
 text-align: center;
 }
 
@@ -59,50 +59,44 @@ nav ul li a {
 }
  
 body{
-      
-
-    background-image: url(images/admin_menu_.png);
+       background-image: url(images/admin_menu_.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
-/* .food-gallery {
- margin-top: 60px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 40px;
+
+h2 {
+    text-transform: uppercase;
+    color: #200202;
+    margin-top: 15%;
+    text-align: center;
+}
+h1 {
+    text-transform: uppercase;
+    color: #200202;
+    margin-top: 15%;
+}
+h3 {
+    text-transform: uppercase;
+    color: #200202;
+    margin-top: 15%;
 }
 
-.food-item {
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  background-color: white;
+ul {
+    list-style: none;
 }
 
-.food-item img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  transition: transform 0.5s ease;
-}
-
-.food-item img:hover {
-  transform: scale(1.1);
-} */
 
 table {
     border-radius: 10px;
-    width: 90%;
+    width: 100%;
     border-collapse: separate; 
     border-spacing: 0; 
-    margin-top: 20px;
+    
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden; 
-    margin-top: 70px;
 }
 
 th, td {
@@ -118,8 +112,30 @@ th {
     color: white;
 }
 
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+}
+
+a {
+    color: #181525;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+form {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .btn {
-  background-color: #2bb410; 
+  background-color: #04AA6D; 
   border: none;
   color: white;
   padding: 15px 32px;
@@ -130,11 +146,29 @@ th {
   border-radius: 10px;
  border: none;
  margin-top: 30px;
- margin-left: 75%;
 }
 .btn:hover{
- background-color: #4b6807;
+ background-color: #0e6443;
 }
 
-
-
+.form-container {
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    width: 300px;
+    text-align: center;
+    color: white;
+}
+form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}

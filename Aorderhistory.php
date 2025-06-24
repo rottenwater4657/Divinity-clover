@@ -19,12 +19,43 @@ $result = $mysqli->query($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>All Orders</title>
-  <link rel="stylesheet" href="adminhistory.css">
+    <link rel="stylesheet" href="menuS.css">
 </head>
+
 <body>
+    <nav class="navbar">
+
+        <a href="#" class="nav-logo">
+            <img src="images/Logo DC.png" alt="Profile" style="height: 60px; border-radius: 50%; margin-left: auto;">
+        </a>
+        <ul class="nav-menu">
+            <li class="class-item">
+                <a href="adminpage.php" class="nav-link">Home</a>
+            </li>
+            <li class="class-item">
+                <a href="menuA.php" class="nav-link">Menu</a>
+            </li>
+            <li class="class-item">
+                <a href="Aorderhistory.php" class="nav-link">Order History</a>
+            </li>
+            <li class="class-item">
+                <a href="#" class="nav-link">Contact Us</a>
+            </li>
+            <li class="class-item">
+                <a href="#" class="nav-link">Feedback</a>
+            </li>
+            <li class="class-item">
+                <a href="first.html" class="nav-link"> Log Out</a>
+            </li>
+
+        </ul>
+    </nav>
+    <!--  -->
+
     <h2>📋 All Orders</h2>
 
     <table>
@@ -39,7 +70,7 @@ $result = $mysqli->query($sql);
             <th>Status</th>
         </tr>
 
-        <?php while ($row = $result->fetch_assoc()): 
+        <?php while ($row = $result->fetch_assoc()):
             $total = $row['price'] * $row['quantity'];
         ?>
             <tr>
@@ -50,14 +81,15 @@ $result = $mysqli->query($sql);
                 <td>Rs. <?= $row['price'] ?></td>
                 <td>Rs. <?= $total ?></td>
                 <td><?= $row['order_time'] ?></td>
-            <td>
-  <span class="status <?= strtolower($row['status']) === 'ready' ? 'status-ready' : 'status-pending' ?>">
-    <?= htmlspecialchars($row['status']) ?>
-  </span>
-</td>
-      
+                <td>
+                    <span class="status <?= strtolower($row['status']) === 'ready' ? 'status-ready' : 'status-pending' ?>">
+                        <?= htmlspecialchars($row['status']) ?>
+                    </span>
+                </td>
+
             </tr>
         <?php endwhile; ?>
     </table>
 </body>
+
 </html>
