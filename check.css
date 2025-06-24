@@ -96,14 +96,13 @@ form button {
         width: 100%;
     }
     
-    /* Style for access granted message */
+   
     p:contains("Access granted") {
         background-color: #dff0d8;
         color: #3c763d;
         border: 1px solid #d6e9c6;
     }
     
-    /* Style for access denied message */
     p:contains("Access denied") {
         background-color: #f2dede;
         color: #a94442;
