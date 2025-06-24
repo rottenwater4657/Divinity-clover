@@ -8,12 +8,9 @@ if(isset($_POST['login'])){
     $sql="select * from students where username=?";
      $stmt = mysqli_prepare($conn, $sql);
      if ($stmt) {
-
         mysqli_stmt_bind_param($stmt, "s", $userName);
-
         mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
-
     if ($result && mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
 
@@ -30,12 +27,7 @@ if(isset($_POST['login'])){
     } else {
         echo "Query preparation failed.";
     }
-
-
-
 }
-
-
 ?>
 <!DOCTYPE html> <html lang="en"> 
     <head> <meta charset="UTF-8"> 
@@ -45,7 +37,6 @@ if(isset($_POST['login'])){
           <link rel="icon" href="logo.png" type="image/png">
          </head> 
          <body>
-  <!-- Background video -->
     <div class="video-container">
         <video loop autoplay muted id="background-video">
             <source src="videos/login.mp4" type="video/mp4">
@@ -54,7 +45,6 @@ if(isset($_POST['login'])){
   <div class="form-container">
     <div class="head"> <a href="first.html">
              <button class="back-button">↩</button> 
-
             </a> 
             <h1>Login</h1>
             </div>
@@ -62,7 +52,6 @@ if(isset($_POST['login'])){
                  Username: <input type="text" name="username" required><br>
                  Password: <input type="password" name="password" required><br> 
                 <button type="submit" name="login">Login</button>
-
  </form> 
   <div class=signup>
   Do not have an account yet?<a href="studentsignup.php">sign up</a>

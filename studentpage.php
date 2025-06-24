@@ -17,7 +17,7 @@
     <a href="first.html" class="logout-btn">Logout</a>
     <a href="Sorderhistory.php">History</a>
    
-    <a href="menu2.php" class="menu-btn">Menu</a>
+    <a href="menuS.php" class="menu-btn">Menu</a>
   </div>
     
     <div name="place order">

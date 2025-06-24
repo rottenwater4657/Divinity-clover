@@ -17,7 +17,6 @@ exit();
     {
         echo "could not register";
     }
-
 }
 ?>
 <!DOCTYPE html>
@@ -28,17 +27,13 @@ exit();
     <title>Student Login</title>
     <link rel="stylesheet" href="signin.css">
     <link rel="icon" href="images/logo.png" type="image/png">
-    
 </head>
 <body>
-    <!-- Background video -->
     <div class="video-container">
         <video loop autoplay muted id="background-video">
             <source src="videos/login.mp4" type="video/mp4">
         </video>
     </div>
-
-    <!-- Login form -->
     <div class="form-container">
         <div class="head">
             <a href="first.html">
@@ -51,7 +46,6 @@ exit();
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit" name="login">Register</button>
         </form>
-       
     </div>
 </body>
 </html>

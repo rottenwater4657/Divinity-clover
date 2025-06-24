@@ -22,23 +22,10 @@ $result = $mysqli->query($sql);
 <head>
     <meta charset="UTF-8">
     <title>All Orders</title>
-    <style>
-        table {
-            width: 90%;
-            border-collapse: collapse;
-            margin: 20px auto;
-        }
-        th, td {
-            padding: 8px 12px;
-            border: 1px solid #ccc;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+  <link rel="stylesheet" href="adminhistory.css">
 </head>
 <body>
-    <h2 style="text-align:center;">📋 All Orders</h2>
+    <h2>📋 All Orders</h2>
 
     <table>
         <tr>
@@ -63,7 +50,12 @@ $result = $mysqli->query($sql);
                 <td>Rs. <?= $row['price'] ?></td>
                 <td>Rs. <?= $total ?></td>
                 <td><?= $row['order_time'] ?></td>
-                <td><?= htmlspecialchars($row['status']) ?></td>
+            <td>
+  <span class="status <?= strtolower($row['status']) === 'ready' ? 'status-ready' : 'status-pending' ?>">
+    <?= htmlspecialchars($row['status']) ?>
+  </span>
+</td>
+      
             </tr>
         <?php endwhile; ?>
     </table>
